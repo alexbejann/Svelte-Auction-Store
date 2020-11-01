@@ -5,7 +5,7 @@
 
 ### Get started
 
-This project has been created with `npx @sveltech/routify init`. In order to start frontend run the dev configuration do `npm run dev`, this will start the svelte application listening on `http://localhost:5000`.
+This project has been created with `npx @sveltech/routify init`. Install dependencies with `npm install` or `pnpm install`([pnpm](https://www.npmjs.com/package/pnpm), to install run `npm i pnpm`). In order to start frontend run the dev configuration do `npm run dev`, this will start the svelte application listening on `http://localhost:5000`.
 
 **Note:** 
 You must use the backend from assignment 2.
@@ -36,7 +36,7 @@ You must use the backend from assignment 2.
     - can **add** a new auction/book
 
 ### Components
-
+- A few of our components are using transition and other svelte magic such as slots, bindings.
 - AddBook.svelte
     - It's the form in our Modal.svelte. 
     - This component handles adding a book 
@@ -51,7 +51,8 @@ You must use the backend from assignment 2.
     - Has been created only because we wanted to put add book form into a separate component
 - User.svelte 
     - Is the component from Users section table.
- 
+- **Note:** 
+ Due to a component (svelte-select) bug you have to search for something in the filters and search box to fill the dropdown
 ## Complex components
 
 - In books-> [id]-> _layout we are using a scoped slot to display the detail page. Inside index.svelte we are processing further the book from the scope.       
@@ -107,7 +108,6 @@ You must use the backend from assignment 2.
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
-    
                 },
             })
                 .then(response => response.json())

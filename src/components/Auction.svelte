@@ -1,7 +1,7 @@
 <script>
     import { authStore } from "../auth.js"
     import { books } from "../auctStore";
-    import { fade } from 'svelte/transition';
+    import {scale} from 'svelte/transition'
     const { user } = authStore;
     export let id;
     export let title;
@@ -103,7 +103,7 @@
 </script>
 
 
-<tr id="{id}" transition:fade>
+<tr id="{id}" out:scale|local>
     {#if saveToggle}
         <td class="title"><input type = 'text' value ={title}/></td>
         <td class="author"><input type = 'text' value ={author}/></td>

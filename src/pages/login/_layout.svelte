@@ -1,6 +1,7 @@
 <script>
     import { authStore } from '../../auth'
     import { redirect } from '@sveltech/routify'
+    import { scale } from 'svelte/transition'
     const { user } = authStore
 
     /**
@@ -8,5 +9,6 @@
      **/
     $: if ($user) $redirect('/')
 </script>
-
-<slot/>
+<div>
+    <slot/>
+</div>

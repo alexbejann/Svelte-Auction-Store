@@ -42,7 +42,7 @@
   </tr>
   </tbody>
   {#each $books as auction}
-    <Auction {...auction} />
+      <Auction {...auction} />
   {/each}
 </table>
 

@@ -1,7 +1,8 @@
 <script>
   import { authStore } from '../auth'
   import SearchBar from '../components/SearchBar.svelte'
-  import { isActive } from "@sveltech/routify";
+  import { scale } from 'svelte/transition'
+  import { isActive, params } from "@sveltech/routify";
   import { redirect } from '@sveltech/routify'
   import {onDestroy} from "svelte";
   // navigation links
@@ -57,9 +58,11 @@
     <a href="/login" class:active={$isActive("/login")} >login</a>
   {/if}
 
-  <div class="search-container">
-   <SearchBar/>
-  </div>
+  {#if !$params.id }
+    <div class="search-container">
+      <SearchBar/>
+    </div>
+  {/if}
 </nav>
 
 <style>

@@ -1,6 +1,7 @@
 <script>
     import {authStore } from "../auth.js"
     import { books,userBids } from "../auctStore";
+    import {scale} from 'svelte/transition'
     const { user } = authStore;
     export let bookID;
     export let bidID;
@@ -47,7 +48,7 @@
     }
 </script>
 
-<tr>
+<tr out:scale|local>
     <td>{title}</td>
     <td>{price}</td>
     <td>{time}</td>

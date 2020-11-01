@@ -3,16 +3,8 @@
     import {params} from "@sveltech/routify";
     import {authStore} from "../../../auth.js"
     import Card from "../../../components/Card.svelte";
-    import { BaseTransition } from '@sveltech/routify/decorators'
-    import { fade } from 'svelte/transition'
 
-    //transition fade when you click on id
-    const configs = [
-        {
-            condition: (meta)=>true,
-            transition: fade,
-        }
-    ]
+
 
     const {user} = authStore;
 

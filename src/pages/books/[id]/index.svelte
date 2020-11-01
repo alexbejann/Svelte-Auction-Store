@@ -5,7 +5,7 @@
     import Card from "../../../components/Card.svelte";
     import { books } from "../../../auctStore"
 
-    const {user, userName} = authStore;
+    const {user} = authStore;
     export let scoped;
     export let book = scoped.book.book;
     export let bids = book.bids
@@ -30,7 +30,7 @@
         unsubscribeToken()
     })
 
-    async function formSubmitted(event) {
+    async function formSubmitted() {
         isValid = true;
         //validate amount field
         if (amountAdded.length <= 0) {
@@ -77,7 +77,7 @@
     }
 </script>
 
-<div id="detail-column" transition:fade>
+<div id="detail-column">
     <h1 class="auction_title">{book.title}</h1>
     <p class="auction_description">Book author: {book.author}</p>
     <p class="auction_description">Published in {book.year}, {book.country}</p>

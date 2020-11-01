@@ -82,7 +82,7 @@
 </script>
 
 <h1>Filters</h1>
-<Select items={items} isSearchable={true} bind:selectedValue {groupBy}/>
+<Select items={items} bind:selectedValue {groupBy}/>
 
 {#each $books as book}
     <Card>

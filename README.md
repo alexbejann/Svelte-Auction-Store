@@ -1,7 +1,6 @@
-# Assignment 3 Svelte
+# Svelte auction store
 
 - **Daniel-Alexandru Bejan**
-- **Cosmin George Mucalau**
 
 ### Get started
 
